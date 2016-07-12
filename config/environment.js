@@ -27,7 +27,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     ENV['contentSecurityPolicy'] = {
-      'img-src': "'self' https://s3.amazonaws.com/",
+      'img-src': "'self' https://s3.amazonaws.com/ http://photos3.meetupstatic.com/",
     };
   }
 

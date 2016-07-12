@@ -1,7 +1,8 @@
 export default function(server) {
   let author = server.create('author', {
-    firstName: 'Julio',
-    lastName: 'Barrios'
+    firstName: 'Ember',
+    lastName: 'Montevideo',
+    avatar: 'http://photos3.meetupstatic.com/photos/event/6/a/b/4/global_449907316.jpeg'
   });
 
   server.createList('post', 5, { author });

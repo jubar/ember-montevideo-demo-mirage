@@ -1,0 +1,14 @@
+MIS POSTS ({{model.length}})
+
+<ul>
+{{#each model as |post|}}
+  <li>
+    <h4>{{post.title}}</h4>
+    <p>
+      {{post.content}}
+    </p>
+  </li>
+{{else}}
+  There are no posts to display
+{{/each}}
+</ul>
