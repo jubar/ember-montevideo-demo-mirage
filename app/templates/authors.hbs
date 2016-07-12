@@ -1,12 +1,23 @@
 <h1>Authors list</h1>
 
 <ul>
-  {{#each model as |author|}}
+  {{#each model.authors as |author|}}
     <li>
       <img src="{{author.avatar}}" alt="">
       {{author.fullName}}
+      <strong>({{author.posts.length}} posts)</strong>
+      <ul>
+        {{#each author.posts as |post|}}
+          <li>
+            {{post.title}}
+          </li>
+        {{/each}}
+      </ul>
+      <hr>
     </li>
   {{/each}}
 </ul>
+
+
 
 {{outlet}}
