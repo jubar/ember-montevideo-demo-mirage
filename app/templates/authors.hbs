@@ -1,20 +1,22 @@
 <h1>Authors list</h1>
 
-<ul>
+<ul class="authors-list">
   {{#each model.authors as |author|}}
     <li>
       <img src="{{author.avatar}}" alt="">
-      {{author.fullName}}
-      <strong>({{author.posts.length}} posts)</strong>
-      <ul>
-        {{#each author.posts as |post|}}
-          <li>
-            {{post.title}}
-          </li>
-        {{/each}}
-      </ul>
-      {{link-to "Ver detalle" "author" author.id}}
-      <hr>
+      <span class="title">
+        {{author.fullName}}
+      </span>
+
+      <span class="more-info">
+        {{fa-icon "pencil-square-o"}}
+        {{author.posts.length}} posts
+      </span>
+
+      {{#link-to "author" author.id}}
+        View profile
+        {{fa-icon "chevron-right"}}
+      {{/link-to}}
     </li>
   {{/each}}
 </ul>

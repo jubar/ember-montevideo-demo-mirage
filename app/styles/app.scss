@@ -1,0 +1,66 @@
+body {
+  font-family: arial;
+  color: #222;
+}
+
+.authors-list {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  li {
+    float: left;
+    margin: 10px;
+    width: 130px;
+    text-align: center;
+    border: solid 1px #ccc;
+    padding-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,.1);
+
+    &:hover {
+      border-color: #e44b2a;
+
+      img{
+        opacity: 1;
+        transition: opacity .3s;
+      }
+    }
+
+    img {
+      display: block;
+      margin-bottom: 10px;
+      width: 128px;
+      opacity: .8;
+      transition: opacity .3s;
+    }
+
+    .title {
+      color: #e44b2a;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      height: 35px;
+      display: block;
+    }
+
+    .more-info{
+      font-size: 13px;
+      color: #444;
+    }
+
+    a {
+      display: block;
+      font-size: 15px;
+      color: #222;
+      cursor: pointer;
+      margin-top: 4px;
+      text-decoration: none;
+
+      &:hover {
+        color: #e44b2a;
+      }
+    }
+  }
+}

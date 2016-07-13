@@ -1,7 +1,7 @@
 import BaseSerializer from './application';
 
 export default BaseSerializer.extend({
-  include: ['posts'],
+  include: ['posts', 'tags'],
 
   keyForAttribute(key) {
     if (key === 'authorId') {
