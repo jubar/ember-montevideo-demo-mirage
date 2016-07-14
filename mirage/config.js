@@ -21,10 +21,7 @@ export default function() {
   this.post('posts');
 
   this.del('posts/:id');
-
-
-
-
+  
   this.get('tags');
 
   this.get('tags/:id');

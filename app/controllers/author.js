@@ -4,8 +4,7 @@ const { Controller } = Ember;
 
 export default Controller.extend({
   actions: {
-    create() {
-      //debugger;
+    createPost() {
       let author = this.get('store').peekRecord('author', this.get('model.id'));
       let title = this.get('postTitle');
       let content = this.get('postContent');
@@ -22,6 +21,11 @@ export default Controller.extend({
         postTitle: '',
         postContent: ''
       });
+    },
+
+    deletePost(id) {
+      let post = this.get('store').peekRecord('post', id);
+      post.destroy();
     }
   }
 });

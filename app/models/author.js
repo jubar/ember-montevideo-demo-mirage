@@ -18,5 +18,13 @@ export default Model.extend({
 
   avatar: attr('string'),
 
+  bio: attr('string'),
+
+  email: attr('string'),
+
+  website: attr('string'),
+
+  role: attr('string'),
+
   posts: hasMany('post')
 });

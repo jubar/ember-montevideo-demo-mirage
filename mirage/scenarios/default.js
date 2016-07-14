@@ -2,10 +2,13 @@ export default function(server) {
   let author = server.create('author', {
     firstName: 'Ember',
     lastName: 'Montevideo',
-    avatar: 'http://photos3.meetupstatic.com/photos/event/6/a/b/4/global_449907316.jpeg'
+    avatar: 'http://photos3.meetupstatic.com/photos/event/6/a/b/4/global_449907316.jpeg',
+    role: 'Administrator',
+    email: 'juliobarmi@gmail.com',
+    website: 'http://www.meetup.com/es-ES/ember-montevideo/'
   });
 
-  server.createList('author', 30);
+  server.createList('author', 50);
 
   server.createList('post', 5, { authorId: author.id });
 

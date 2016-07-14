@@ -30,6 +30,19 @@ h1 {
   text-shadow: 1px 1px 4px rgba(0,0,0,.1);
 }
 
+a {
+  text-decoration: none;
+  color: #e44b2a;
+
+  &:hover{
+    color: #222;
+  }
+}
+
+.block {
+  display: block;
+}
+
 .authors-list {
   list-style: none;
   width: 100%;
@@ -39,7 +52,7 @@ h1 {
   li {
     position: relative;
     float: left;
-    margin: 10px;
+    margin: 8px;
     width: 130px;
     text-align: center;
     border: solid 1px #ccc;
@@ -121,6 +134,75 @@ h1 {
 
       &:hover {
         color: #e44b2a;
+      }
+    }
+  }
+}
+
+.author-detail {
+  border-collapse: collapse;
+
+  td {
+    padding-right: 15px;
+    vertical-align: top;
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+    border-bottom: dotted 1px #ccc;
+    position: relative;
+
+    .fa-times {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      color: #e44b2a;
+      cursor: pointer;
+      padding: 3px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: rgba(255,255,255,.4);
+        color: #000;
+      }
+    }
+
+    &.new-post {
+      border-bottom: none;
+
+      .m-input {
+        border: solid 1px #999;
+        width: 450px;
+        padding: 5px;
+        margin-bottom: 8px;
+
+        &:focus {
+          border-color: #e44b2a;
+        }
+      }
+
+      .action {
+        width: 460px;
+        text-align: right;
+      }
+
+      button {
+        background-color: #e44b2a;
+        color: #fff;
+        font-size: 14px;
+        border: solid 1px #c74326;
+        padding: 5px 15px;
       }
     }
   }

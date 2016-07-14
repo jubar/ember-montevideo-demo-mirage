@@ -1,12 +1,60 @@
 <h1>Author detail</h1>
-<h2>{{model.fullName}}</h2>
-<img src="{{model.avatar}}" alt="{{model.fullName}}">
 
-<h5>New post</h5>
-{{input type="text" value=postTitle}}
-{{textarea value=postContent cols="80" rows="6"}}
-<button type="button" {{action "create"}}>Create</button>
+<table class="table author-detail">
+  <tr>
+    <td>
+      <img src="{{model.avatar}}" alt="{{model.fullName}}">
+    </td>
+    <td>
+      <h2>{{model.fullName}} ({{model.role}})</h2>
+      <p>
+        {{model.bio}}
+      </p>
+      <p>
+        <a href="mailto:{{model.email}}" class="block">
+          {{fa-icon "envelope-o"}}
+          {{model.email}}
+        </a>
+      </p>
+      <p>
+        <a href="{{model.website}}" target="_blank" class="block">
+          {{fa-icon "globe"}}
+          {{model.website}}
+        </a>
+      </p>
+    </td>
+  </tr>
+</table>
 
-{{link-to "View my Posts" "author.posts" model}}
-<hr>
-{{outlet}}
+<h3>MIS POSTS ({{model.posts.length}})</h3>
+
+<ul class="post-list">
+{{#each model.posts as |post|}}
+  <li>
+    <h4>{{post.title}}</h4>
+    <p>
+      {{post.content}}
+    </p>
+
+    {{fa-icon
+      "times"
+      title="Delete post"
+      click=(action "deletePost" post.id)
+    }}
+  </li>
+{{else}}
+  There are no posts to display
+{{/each}}
+</ul>
+<ul class="post-list">
+  <li class="new-post">
+    <h4>New post</h4>
+    {{input type="text" value=postTitle class="m-input"}}
+    <br>
+    {{textarea value=postContent cols="80" rows="6" class="m-input"}}
+    <br>
+    <div class="action">
+      <button type="button" {{action "createPost"}}>Create new post</button>
+    </div>
+  </li>
+</ul>
