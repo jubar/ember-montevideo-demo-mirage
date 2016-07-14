@@ -24,8 +24,9 @@ export default Controller.extend({
     },
 
     deletePost(id) {
-      let post = this.get('store').peekRecord('post', id);
-      post.destroy();
+      this.get('store').findRecord('post', id).then((post) => {
+        post.destroyRecord();
+      });
     }
   }
 });
