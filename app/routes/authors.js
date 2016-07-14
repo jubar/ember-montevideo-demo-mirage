@@ -1,13 +1,10 @@
 import Ember from 'ember';
 
-const { Route, RSVP } = Ember;
+const { Route } = Ember;
 
 export default Route.extend({
 
   model() {
-    return RSVP.hash({
-      authors: this.get('store').findAll('author') // ,
-      // post: this.get('store').findAll('post')
-    });
+    return this.get('store').findAll('author')
   }
 });

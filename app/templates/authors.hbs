@@ -1,7 +1,7 @@
 <h1>Authors list</h1>
 
 <ul class="authors-list">
-  {{#each model.authors as |author|}}
+  {{#each model as |author|}}
     <li>
       <img src="{{author.avatar}}" class="avatar" alt="">
       <span class="title">{{author.fullName}}</span>

@@ -30,6 +30,4 @@ test('visiting /authors', function(assert) {
     assert.equal(find('ul#posts li').size(), 1, '1 post was found.');
     assert.equal(find('ul#posts li:first h4').text(), 'Simple test', 'Simple test was found.');
   });
-
-  return stop();
 });
