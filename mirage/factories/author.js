@@ -5,7 +5,7 @@ export default Factory.extend({
     return faker.name.firstName();
   },
 
-  lastName() {
+  familyName() {
     return faker.name.lastName();
   },
 
@@ -34,8 +34,8 @@ export default Factory.extend({
   },
 
   afterCreate(author, server) {
-    let { firstName, lastName } = author;
-    if (firstName === 'Ember' && lastName === 'Montevideo') {
+    let { firstName, familyName } = author;
+    if (firstName === 'Ember' && familyName === 'Montevideo') {
       server.create('post', {
         title: 'Created in the factory',
         content: 'This very short post was created in the author\'s factory.',

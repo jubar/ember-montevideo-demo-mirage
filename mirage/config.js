@@ -1,4 +1,6 @@
 export default function() {
+  this.namespace = 'api/v1';
+
   this.get('authors');
 
   this.get('authors/:id');
@@ -11,7 +13,7 @@ export default function() {
   //
   //   author.posts.destroy();
   //   author.destroy();
-  //   // console.log(schema.posts.all().models.length);
+  //   console.log(schema.posts.all().models.length);
   // });
 
   this.get('posts');

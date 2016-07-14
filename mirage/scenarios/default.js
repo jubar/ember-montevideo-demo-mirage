@@ -1,7 +1,7 @@
 export default function(server) {
   let author = server.create('author', {
     firstName: 'Ember',
-    lastName: 'Montevideo',
+    familyName: 'Montevideo',
     avatar: 'http://photos3.meetupstatic.com/photos/event/6/a/b/4/global_449907316.jpeg',
     role: 'Administrator',
     email: 'juliobarmi@gmail.com',
