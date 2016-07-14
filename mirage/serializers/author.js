@@ -1,10 +1,10 @@
+import Ember from 'ember';
 import BaseSerializer from './application';
 const { dasherize } = Ember.String;
 
 export default BaseSerializer.extend({
   include: ['posts'],
-
-  // embed: true
+  // embed: true,
 
   keyForAttribute(attr) {
     if (attr === 'familyName') {

@@ -7,7 +7,7 @@ moduleForAcceptance('Acceptance | authors');
 test('visiting /authors', function(assert) {
   let author = server.create('author', {
     firstName: 'Julio',
-    lastName: 'Barrios'
+    familyName: 'Barrios'
   });
   server.createList('author', 5);
   server.create('post', {
@@ -27,7 +27,7 @@ test('visiting /authors', function(assert) {
   visit('/authors/1');
 
   andThen(function() {
-    assert.equal(find('ul#posts li').size(), 1, '1 post was found.');
-    assert.equal(find('ul#posts li:first h4').text(), 'Simple test', 'Simple test was found.');
+    assert.equal(find('ul#posts li').size(), 1, 'Post found.');
+    assert.equal(find('ul#posts li:first h4').text(), 'Simple test', 'Post title found.');
   });
 });
