@@ -2,6 +2,11 @@
 <h2>{{model.fullName}}</h2>
 <img src="{{model.avatar}}" alt="{{model.fullName}}">
 
+<h5>New post</h5>
+{{input type="text" value=postTitle}}
+{{textarea value=postContent cols="80" rows="6"}}
+<button type="button" {{action "create"}}>Create</button>
+
 {{link-to "View my Posts" "author.posts" model}}
 <hr>
 {{outlet}}

@@ -13,10 +13,18 @@
         {{author.posts.length}} posts
       </span>
 
+      {{fa-icon "times" click=(action "delete" author.id)}}
+
       {{#link-to "author" author.id}}
         View profile
         {{fa-icon "chevron-right"}}
       {{/link-to}}
+
+      {{#if author.isDeleted}}
+        <div class="loading">
+          {{fa-icon "circle-o-notch" spin=true}}
+        </div>
+      {{/if}}
     </li>
   {{/each}}
 </ul>
