@@ -3,14 +3,12 @@
 <ul class="authors-list">
   {{#each model.authors as |author|}}
     <li>
-      <img src="{{author.avatar}}" alt="">
-      <span class="title">
-        {{author.fullName}}
-      </span>
+      <img src="{{author.avatar}}" class="avatar" alt="">
+      <span class="title">{{author.fullName}}</span>
 
       <span class="more-info">
         {{fa-icon "pencil-square-o"}}
-        {{author.posts.length}} posts
+        <span class="post-count">{{author.posts.length}}</span> posts
       </span>
 
       {{fa-icon "times" click=(action "delete" author.id)}}
