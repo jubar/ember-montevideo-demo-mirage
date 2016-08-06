@@ -19,16 +19,4 @@ export default function(server) {
   server.createList('post', 6, {
     authorId: 3
   });
-
-  // server.createList('tag', 10);
-  //
-  // server.create('postTag', {
-  //   tagId: 1,
-  //   postId: 1
-  // });
-  //
-  // server.create('postTag', {
-  //   tagId: 1,
-  //   postId: 6
-  // });
 }
