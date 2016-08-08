@@ -26,5 +26,17 @@ export default Model.extend({
 
   role: attr('string'),
 
-  posts: hasMany('post')
+  posts: hasMany('post'),
+
+  shortBio: computed('bio', {
+    get() {
+      let bio = this.get('bio');
+
+      if (bio.length < 50) {
+        return bio;
+      }
+
+      return `${bio.substring(0, 50)}...`;
+    }
+  })
 });

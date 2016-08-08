@@ -1,31 +1,17 @@
 @import 'ember-paper';
 
-body {
-  font-family: arial;
-  color: #222;
-  padding-top: 55px;
-}
+md-card {
+  // height: 100%;
 
-.menu {
-  height: 50px;
-  width: 100%;
-  line-height: 50px;
-  position: fixed;
-  top:0;
-  left: 0;
-  background-color: #e44b2a;
-  color: #fff;
-  font-size: 22px;
-  z-index: 100;
-
-  a {
-    color: #fff;
-
-    &:hover {
-      color: #222;
-    }
+  md-card-title {
+    min-height: 65px;
   }
 }
+
+.author-list-bio {
+  height: 80px;
+}
+
 
 .content {
   margin: 0 auto;

@@ -8,7 +8,7 @@ export default function(server) {
     website: 'http://www.meetup.com/es-ES/ember-montevideo/'
   });
 
-  server.createList('author', 17);
+  server.createList('author', 23);
 
   server.createList('post', 5, { authorId: author.id });
 

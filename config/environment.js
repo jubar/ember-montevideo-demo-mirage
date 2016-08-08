@@ -7,36 +7,28 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
-      FEATURES: {
-        // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
-      }
+      FEATURES: {}
     },
 
-    APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
-    }
+    APP: {}
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-
-    ENV['contentSecurityPolicy'] = {
-      'img-src': "'self' https://s3.amazonaws.com/ http://photos3.meetupstatic.com/",
-    };
+    ENV.contentSecurityPolicy = {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline'",
+      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
+      'font-src': "'self' fonts.gstatic.com",
+      'connect-src': "'self'",
+      'img-src': "'self' data: https://s3.amazonaws.com/ http://photos3.meetupstatic.com/",
+      'media-src': "'self'"
+    }
   }
 
   if (environment === 'test') {
-    // Testem prefers this...
     ENV.baseURL = '/';
     ENV.locationType = 'none';
 
-    // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 

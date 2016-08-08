@@ -1,10 +1,33 @@
-<div class="menu">
-  <div class="content">
-    {{#link-to "authors"}}
-    <strong>Ember Montevideo Demo Mirage</strong>
-    {{/link-to}}
-  </div>
-</div>
-<div class="content">
-  {{outlet}}
-</div>
+{{#paper-toolbar}}
+  {{#paper-toolbar-tools}}
+    {{#paper-button iconButton=true onClick=(action "toggleSideNav") }}
+      {{paper-icon "menu"}}
+    {{/paper-button}}
+    <h2>
+      Ember Montevideo Demo Mirage with Ember Paper
+    </h2>
+  {{/paper-toolbar-tools}}
+{{/paper-toolbar}}
+
+{{#paper-sidenav-container class="inner-sidenav"}}
+  {{#paper-sidenav
+    class="md-whiteframe-z2"
+    name="left"
+    lockedOpen=false
+    open=leftSideBarOpen
+    onToggle=(action (mut leftSideBarOpen))
+  }}
+    {{#paper-toolbar as |toolbar|}}
+      {{#paper-toolbar-tools}}
+        Menu
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+    {{#paper-content padding=true}}
+      {{#link-to "authors"}}Authors{{/link-to}}
+    {{/paper-content}}
+  {{/paper-sidenav}}
+
+  {{#paper-card-content class="flex"}}
+    {{outlet}}
+  {{/paper-card-content}}
+{{/paper-sidenav-container}}
