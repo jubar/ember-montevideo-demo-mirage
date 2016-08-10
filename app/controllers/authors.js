@@ -8,6 +8,10 @@ export default Controller.extend({
       this.get('store').findRecord('author', id).then((author) => {
         author.destroyRecord();
       });
+    },
+
+    detail(id) {
+      this.transitionToRoute('author', id);
     }
   }
 });

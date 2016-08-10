@@ -1,15 +1,22 @@
 @import 'ember-paper';
 
 md-card {
+  position: relative;
   // height: 100%;
 
   md-card-title {
     min-height: 65px;
   }
-}
 
-.author-list-bio {
-  height: 80px;
+  .loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.7);
+    z-index: 50;
+  }
 }
 
 
@@ -23,15 +30,6 @@ h1 {
   padding-bottom: 10px;
   color: #e44b2a;
   text-shadow: 1px 1px 4px rgba(0,0,0,.1);
-}
-
-a {
-  text-decoration: none;
-  color: #e44b2a;
-
-  &:hover{
-    color: #222;
-  }
 }
 
 .block {
