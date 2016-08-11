@@ -1,0 +1,64 @@
+<div class="layout-row flex">
+  <div class="flex" layout-margin>
+    <h1>Paper author detail</h1>
+  </div>
+</div>
+
+<table class="table author-detail">
+  <tr>
+    <td>
+      <img src="{{model.avatar}}" alt="{{model.fullName}}">
+    </td>
+    <td>
+      <h2>{{model.fullName}} ({{model.role}})</h2>
+      <p>
+        {{model.bio}}
+      </p>
+      <p>
+        <a href="mailto:{{model.email}}" class="block">
+          {{fa-icon "envelope-o"}}
+          {{model.email}}
+        </a>
+      </p>
+      <p>
+        <a href="{{model.website}}" target="_blank" class="block">
+          {{fa-icon "globe"}}
+          {{model.website}}
+        </a>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<h3>MIS POSTS ({{model.posts.length}})</h3>
+
+<ul id="posts" class="post-list">
+{{#each model.posts as |post|}}
+  <li>
+    <h4>{{post.title}}</h4>
+    <p>
+      {{post.content}}
+    </p>
+
+    {{fa-icon
+      "times"
+      title="Delete post"
+
+    }}
+  </li>
+{{else}}
+  There are no posts to display
+{{/each}}
+</ul>
+<ul class="post-list">
+  <li class="new-post">
+    <h4>New post</h4>
+    {{input type="text" value=postTitle class="m-input"}}
+    <br>
+    {{textarea value=postContent cols="80" rows="6" class="m-input"}}
+    <br>
+    <div class="action">
+      <button type="button">Create new post</button>
+    </div>
+  </li>
+</ul>

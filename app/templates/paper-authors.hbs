@@ -1,0 +1,57 @@
+<div class="layout-column flex">
+  <div class="flex" layout-margin>
+    <h1>Paper authors list</h1>
+  </div>
+
+  <div class="layout-row layout-align-center layout-wrap">
+    {{#each model as |author|}}
+      <div class="flex-xs-80 flex-sm-30 flex-md-20 flex-15 layout-row layout-align-center-stretch">
+        {{#paper-card as |card|}}
+          {{card.image src=author.avatar}}
+          {{#card.title class="flex-nogrow" as |title|}}
+            {{#title.text as |text|}}
+              {{#text.headline}}
+                {{author.fullName}}
+              {{/text.headline}}
+              {{#text.subhead}}
+                {{paper-icon "speaker-notes" size=24 class="md-primary"}}
+                {{author.posts.length}} posts
+              {{/text.subhead}}
+            {{/title.text}}
+          {{/card.title}}
+
+          {{#card.content class="flex"}}
+            <p>
+              {{author.bio}}
+            </p>
+          {{/card.content}}
+
+          {{paper-divider}}
+
+          {{#card.actions}}
+            {{#paper-button
+              class="md-primary"
+              onClick=(action "delete" author.id)
+            }}
+              Delete
+            {{/paper-button}}
+            {{#paper-button
+              class="md-raised md-primary"
+              onClick=(action "detail" author.id)
+            }}
+              Detail
+            {{/paper-button}}
+          {{/card.actions}}
+
+          {{#if author.isDeleted}}
+          <div class="loading layout-column flex layout-align-center-stretch">
+            <div class="layout-column flex layout-align-center-center">
+              {{paper-progress-circular diameter=96}}
+            </div>
+          </div>
+          {{/if}}
+        {{/paper-card}}
+      </div>
+    {{/each}}
+  </div>
+</div>

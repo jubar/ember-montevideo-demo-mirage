@@ -22,8 +22,20 @@
         Menu
       {{/paper-toolbar-tools}}
     {{/paper-toolbar}}
-    {{#paper-content padding=true}}
-      {{#link-to "authors"}}Authors{{/link-to}}
+    {{#paper-content padding=true class="layout-column layout-align-center-stretch"}}
+
+      {{#paper-button noink=true primary=true}}
+        {{#link-to "authors" class="block"}}
+          Authors
+        {{/link-to}}
+      {{/paper-button}}
+
+      {{#paper-button noink=true primary=true}}
+        {{#link-to "paper-authors" class="block"}}
+          <strong>Paper</strong> Authors
+        {{/link-to}}
+      {{/paper-button}}
+
     {{/paper-content}}
   {{/paper-sidenav}}
 

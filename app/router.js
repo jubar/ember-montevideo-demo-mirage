@@ -8,6 +8,8 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('authors');
   this.route('author', { path: 'authors/:id' });
+  this.route('paper-authors');
+  this.route('paper-author', { path: 'paper-authors/:id' });
 });
 
 export default Router;
